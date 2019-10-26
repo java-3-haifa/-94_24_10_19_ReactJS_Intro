@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    import Card from './card.js'
+
+    // let h1 = React.createElement('h1',{
+    //     style:{color:'red'},
+    //     key:'key1'
+    // },'Hello world!!!');
+    //
+    // let div = React.createElement('div',{
+    //     className:'myClass',
+    //     key:'key2'
+    // },[h1]);
+    let name = 'Vasya';
+    let todos = ['One','Two','Three'];
+;    let styles = {
+      color: 'red',
+      textAlign: 'center',
+      textTransform:'uppercase'
+    };
+    ReactDOM.render(
+        <div className="Myclass">
+            <h1 style={{color: 'red'}}>Hello World!</h1>
+            <h1 style={styles}>Hello World!</h1>
+            <p>{Math.random() > 0.5 ? name : 'Petya'}</p>
+            <ul>{
+                todos.map((item,index) =>
+                    <li key={index}>{item}</li>
+                )
+            }</ul>
+            <ul>{
+                todos.map((item,index) =>
+                    <li key={index}>{item}</li>
+                )
+            }</ul>
+            <Card/>
+        </div>
+        ,
+        document.querySelector('#root')
+    );
+</script>
+</body>
+</html>
